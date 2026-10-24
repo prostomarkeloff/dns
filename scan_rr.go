@@ -1069,7 +1069,7 @@ func (rr *NSEC3) parse(c *zlexer, o string) *ParseError {
 		return &ParseError{err: "bad NSEC3 Salt", lex: l}
 	}
 	if l.token != "-" {
-		rr.SaltLength = uint8(len(l.token)) / 2
+		rr.SaltLength = uint8(len(l.token) / 2)
 		rr.Salt = l.token
 	}
 
